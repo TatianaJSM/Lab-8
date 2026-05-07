@@ -51,10 +51,7 @@ body {
 
 .app {
   padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 2rem;
-  align-items: start;
+  display: block;
 }
 
 .hidden {
@@ -202,4 +199,21 @@ body {
   border-radius: 999px;
   margin-left: 0.5rem;
 }
+.app.details-active {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.app.details-active .shows-container {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+@media (max-width: 900px) {
+  .app.details-active {
+    grid-template-columns: 1fr;
+  }
+}
+
 }

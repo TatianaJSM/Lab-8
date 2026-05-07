@@ -7,6 +7,7 @@ import {
   renderError
 } from "./modules/ui.js";
 
+const app = document.querySelector(".app");
 const searchForm = document.querySelector("#search-form");
 const searchInput = document.querySelector("#search-input");
 const showsContainer = document.querySelector("#shows-container");
@@ -23,6 +24,7 @@ async function loadInitialShows() {
 
     detailsContainer.innerHTML = "";
     detailsContainer.classList.add("hidden");
+    app.classList.remove("details-active");
   } catch (error) {
     renderError(showsContainer, "No se pudieron cargar las series.");
   }
@@ -43,6 +45,7 @@ searchForm.addEventListener("submit", async event => {
 
     detailsContainer.innerHTML = "";
     detailsContainer.classList.add("hidden");
+    app.classList.remove("details-active");
 
     currentShows = await searchShows(query);
     renderShows(currentShows, showsContainer);
@@ -60,6 +63,7 @@ showsContainer.addEventListener("click", async event => {
   const selectedShow = currentShows.find(show => show.id === showId);
 
   try {
+    app.classList.add("details-active");
     renderLoading(detailsContainer);
 
     const seasons = await getFullShowDetails(showId);
@@ -76,6 +80,7 @@ detailsContainer.addEventListener("click", event => {
 
   detailsContainer.innerHTML = "";
   detailsContainer.classList.add("hidden");
+  app.classList.remove("details-active");
 });
 
 loadInitialShows();
