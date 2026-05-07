@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #111;
+  color: white;
+}
+
+.header {
+  padding: 1.5rem 2rem;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header h1 {
+  color: #e50914;
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.search-form input {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: none;
+  width: 280px;
+}
+
+.search-form button {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.app {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.hidden {
+  display: none;
+}
+
+.shows-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1.5rem;
+}
+
+.show-card {
+  background: #1f1f1f;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.show-card:hover {
+  transform: scale(1.04);
+}
+
+.show-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.show-info {
+  padding: 1rem;
+}
+
+.show-info h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+.show-info p {
+  color: #aaa;
+  margin: 0.3rem 0;
+}
+
+.details-container {
+  background: #181818;
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-height: 82vh;
+  overflow-y: auto;
+}
+
+.back-btn {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.back-btn:hover {
+  background: #555;
+}
+
+.details-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.details-layout img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.details-info h2 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.rating-box {
+  background: #e50914;
+  width: fit-content;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  font-weight: bold;
+  margin: 0.8rem 0;
+}
+
+.season {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1rem;
+}
+
+.season h3 {
+  color: #e50914;
+}
+
+.episode {
+  background: #252525;
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border-radius: 8px;
+}
+
+.message {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .search-form {
+    width: 100%;
+  }
+
+  .search-form input {
+    width: 100%;
+  }
+
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .details-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .details-container {
+    max-height: none;
+  }
+  .season-rating {
+  font-size: 0.9rem;
+  color: #fff;
+  background: #333;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  margin-left: 0.5rem;
+}
+}

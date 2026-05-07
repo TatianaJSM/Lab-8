@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 8 - TVMaze</title>
+
+  <link rel="stylesheet" href="./css/global.css" />
+  <script type="module" src="./index.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <h1>TVFlix</h1>
+
+    <form id="search-form" class="search-form">
+      <input id="search-input" type="text" placeholder="Buscar serie..." />
+      <button type="submit">Buscar</button>
+    </form>
+  </header>
+
+  <main class="app">
+    <section id="shows-container" class="shows-container"></section>
+    <section id="details-container" class="details-container hidden"></section>
+  </main>
+</body>
+</html>
