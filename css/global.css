@@ -104,21 +104,6 @@ body {
   overflow-y: auto;
 }
 
-.back-btn {
-  background: #333;
-  color: white;
-  border: none;
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-.back-btn:hover {
-  background: #555;
-}
-
 .details-layout {
   display: grid;
   grid-template-columns: 260px 1fr;
@@ -145,6 +130,21 @@ body {
   margin: 0.8rem 0;
 }
 
+.back-btn {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.back-btn:hover {
+  background: #555;
+}
+
 .season {
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #333;
@@ -153,6 +153,15 @@ body {
 
 .season h3 {
   color: #e50914;
+}
+
+.season-rating {
+  font-size: 0.9rem;
+  color: #fff;
+  background: #333;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  margin-left: 0.5rem;
 }
 
 .episode {
@@ -165,6 +174,17 @@ body {
 .message {
   color: #ccc;
   font-size: 1.1rem;
+}
+
+.app.details-active {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.app.details-active .shows-container {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 @media (max-width: 900px) {
@@ -180,7 +200,7 @@ body {
     width: 100%;
   }
 
-  .app {
+  .app.details-active {
     grid-template-columns: 1fr;
   }
 
@@ -191,29 +211,4 @@ body {
   .details-container {
     max-height: none;
   }
-  .season-rating {
-  font-size: 0.9rem;
-  color: #fff;
-  background: #333;
-  padding: 0.3rem 0.6rem;
-  border-radius: 999px;
-  margin-left: 0.5rem;
-}
-.app.details-active {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 2rem;
-  align-items: start;
-}
-
-.app.details-active .shows-container {
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-}
-
-@media (max-width: 900px) {
-  .app.details-active {
-    grid-template-columns: 1fr;
-  }
-}
-
 }
